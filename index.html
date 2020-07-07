@@ -275,13 +275,30 @@
             display: flex;
             align-items: center;
             justify-content: center;
+            background: url('/images/GoPage.jpg');
+            background-size:cover ;
 
         }
 
         .btarea.active {
             opacity: 1;
         }
-
+        .goPageArea{
+            position: fixed;
+            left: 0;
+            top: 0;
+            width: 100vw;
+            height: 100vh;
+            opacity: 0;
+            transition: 1.5s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-size:cover ;
+        }
+        .goPageArea.active {
+            opacity: 1;
+        }
         @media screen and (max-width:780px) {
             .secbox .col {
                 left: 0vw;
@@ -355,12 +372,23 @@
     </div>
     <div class="sevbox">
     </div>
-    <div class="adv1"> <img class="h-100" src="/images/adv1.png" alt=""> </div>
-    <div class="adv2"> <img class="h-100" src="/images/adv2.png" alt=""> </div>
-    <div class="adv3"> <img class="h-100" src="/images/adv3.png" alt=""> </div>
-    <div class="btarea">
-        <button type="button" class="btn btn-info" style="margin: 0 auto;">現在就擁有>></button>
+    <div class="adv1"> <img class="h-100" src="https://raw.githubusercontent.com/ccwang116/Product_demo_ScrollAnimation/gh-pages/images/adv1.png" alt=""> </div>
+    <div class="adv2"> <img class="h-100" src="https://raw.githubusercontent.com/ccwang116/Product_demo_ScrollAnimation/gh-pages/images/adv2.png" alt=""> </div>
+    <div class="adv3"> <img class="h-100" src="https://raw.githubusercontent.com/ccwang116/Product_demo_ScrollAnimation/gh-pages/images/images/adv3.png" alt=""> </div>
+    <div class="btarea ">
+        <div class="row row-cols-md-2 row-cols-1 justify-content-center">
+            <div class="col align-self-center">
+                <button type="button" class="btn btn-info" >現在就擁有>></button>
+            </div>
+        
+            <div class="col align-self-center"><img style="width: 280px;"
+                src="https://raw.githubusercontent.com/ccwang116/Product_demo_ScrollAnimation/gh-pages/images/mainProduct.png"
+                alt="">
+            </div>
+        
+       </div>
     </div>
+   
 
 
 

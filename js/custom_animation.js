@@ -54,6 +54,8 @@ $(window).scroll(function () {
         $(".adv3").removeClass("active")
     } else if (scrolhi > 14 * space && scrolhi <= 15 * space) {
         $(".btarea").addClass("active")
+        $(".goPageArea").addClass("active")
+
     } else {
         $(".arrow").removeClass("active")
 
@@ -68,6 +70,8 @@ $(window).scroll(function () {
         $(".adv2").removeClass("active")
         $(".adv3").removeClass("active")
         $(".btarea").removeClass("active")
+        $(".goPageArea").removeClass("active")
+
     }
     // console.log(scrolhi)
 })
