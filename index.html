@@ -20,6 +20,7 @@
             height: 100vh;
         }
         .mountain{
+            width: 100%;
             height: 100%;
             object-fit: cover;
         }
@@ -49,15 +50,21 @@
             position: fixed;
             left:0px;
             top:0px;
+            width: 80vw;
             height: 100vh;
             transition: 1.5s;
             opacity: 0;
+            margin: 0 auto;
         }
         .secbox.active{
             opacity: 1;
         }
+        .secbox .col{
+            left: 10vw;
+            top: 15vh;
+        }
         .sm-mt{
-            min-width: 91px;
+            min-width: 90px;
             object-fit: cover;
         }
         .thirdbox{
@@ -139,19 +146,32 @@
         .sixbox.active{
             bottom:0;
         }
+        @media screen and (max-width:780px) {
+            .secbox .col{
+            left: 0vw;
+            top: 0vh;
+            padding: 10px;
+        }
+        .mountain{
+            /* width: 50w; */
+            height: 50%;
+            object-fit: cover;
+        }
+        
+        }
     </style>
 </head>
 
 <body>
     <header>
-    <img class="w-100 mountain" src="https://raw.githubusercontent.com/ccwang116/Product_demo_ScrollAnimation/gh-pages/images/titleimg.jpg" alt="">
+    <img class=" mountain" src="https://raw.githubusercontent.com/ccwang116/Product_demo_ScrollAnimation/gh-pages/images/titleimg.jpg" alt="">
     </header>
     <div class="w-100 bkbox"> 
         <div class="wtbox">
         </div>
-        <div class="w-100 row row-cols-md-2  row-cols-1 secbox flex-wrap"> 
+        <div class="row row-cols-md-2  row-cols-1 secbox flex-wrap"> 
             <div class="col">
-                <img class=" sm-mt" src="https://raw.githubusercontent.com/ccwang116/Product_demo_ScrollAnimation/gh-pages/images/sm-mt.jpg" alt="">
+                <img class="sm-mt" src="https://raw.githubusercontent.com/ccwang116/Product_demo_ScrollAnimation/gh-pages/images/sm-mt.jpg" alt="">
             </div>
             <div class="col">
                 <h2 class="mt-5 ml-5">雪山白<br>
@@ -163,7 +183,7 @@
             </div>
         </div>
         <div class="thirdbox w-100">
-            <h3 class=" position-absolute left-0  text-center" style="top: 10vh;">MiniPRO鹿善<br>
+            <h3 class="w-100 position-absolute" style="left:50px;top: 10vh;">MiniPRO鹿善<br>
                 手持·美學<br>
                 美麗掌握在手裡</h3>
                 
@@ -173,13 +193,13 @@
             <img class="w-100 pdimg" src="https://raw.githubusercontent.com/ccwang116/Product_demo_ScrollAnimation/gh-pages/images/mainProduct.png" alt="">
         </div>
         <div class="ffbox">
-            <h3 class="text-white mt-5">黑色經典不凡</h3>
+            <h3 class="text-white mt-5"></h3>
         </div>
         <div class="fivebox">
             <img class="w-100 bkimg" src="https://raw.githubusercontent.com/ccwang116/Product_demo_ScrollAnimation/gh-pages/images/bkProduct.png" alt="">
         </div>
         <div class="sixbox">
-            <h3 class="w-100 position-absolute" style="left:50px;top: 10vh;">MiniPRO鹿善<br>
+            <h3 class="w-100 position-absolute" style="left:50px;top: 10vh;">黑色經典不凡<br>
                 美感實用,内外兼具 </h3>
                 <p class="m-0 w-100 position-absolute" style="left:50px;top: calc(10vh + 66px)">
                 MiniPRO鹿善的設計採用優質材料和先進工藝,<br>簡約流線型輕量化設計,<br>
@@ -201,6 +221,7 @@
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
         crossorigin="anonymous"></script>
     <script>
+        let space = 300;
         let navPosition = $(".bkbox").offset()
         console.log(navPosition)
         $(window).scroll(function () {
@@ -208,12 +229,12 @@
             if (scrolhi > navPosition.top) { $(".bkbox").addClass("fixed-top") } else {
                 $(".bkbox").removeClass("fixed-top")
             }
-            if(scrolhi>300 && scrolhi<=500){
+            if(scrolhi > space && scrolhi<= (2 * space)){
                 $(".wtbox").addClass("active")
-            }else if(scrolhi>500 && scrolhi<=875){
+            }else if(scrolhi>2 * space && scrolhi <= 3 * space){
                 $(".wtbox").addClass("active2")
                 $(".secbox").addClass("active")
-            }else if(scrolhi>875&& scrolhi<=1066){
+            }else if(scrolhi>900 && scrolhi<=1066){
                 $(".secbox").removeClass("active")
                 $(".thirdbox").addClass("active")
             }else if(scrolhi>1066&& scrolhi<=1400){
