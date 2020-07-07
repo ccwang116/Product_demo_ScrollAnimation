@@ -1,11 +1,11 @@
 let space = 300;
 let navPosition = $(".bkbox").offset()
-console.log(navPosition)
+// console.log(navPosition)
 $(window).scroll(function () {
     let scrolhi = $(this).scrollTop()
-    if (scrolhi > navPosition.top) { $(".bkbox").addClass("fixed-top") } else {
-        $(".bkbox").removeClass("fixed-top")
-    }
+    // if (scrolhi > navPosition.top) { $(".bkbox").addClass("fixed-top") } else {
+    //     $(".bkbox").removeClass("fixed-top")
+    // }
     if (scrolhi > space && scrolhi <= (2 * space)) {
         $(".wtbox").addClass("active")
     } else if (scrolhi > 2 * space && scrolhi <= 3 * space) {
@@ -58,7 +58,7 @@ $(window).scroll(function () {
 
     } else {
         $(".arrow").removeClass("active")
-
+        $(".bkimg").removeClass("active")
         $(".wtbox").removeClass("active active2")
         $(".secbox").removeClass("active")
         $(".thirdbox").removeClass("active")

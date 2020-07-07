@@ -13,7 +13,7 @@
 
     <style>
         body {
-            height: 900vh;
+            height: 830vh;
         }
 
         header {
@@ -94,7 +94,7 @@
         }
 
         .sm-mt {
-            min-width: 90px;
+            max-width: 340px;
             object-fit: cover;
         }
 
@@ -293,11 +293,27 @@
                 top: 0vh;
                 padding: 10px;
             }
+            .sm-mt {
+            width: 250px;
+            height: 250px;
+            margin: 100px 0 0 100px;
+            object-fit: cover;
+            }
+            .adv1.active,.adv3.active {
+                left: 0vw;
+            }
 
-            /* .mountain{
-            height: 50%;
-        } */
-
+            .adv2.active {
+                right: 0vw;
+            }
+            .btn{
+                width: 175px;
+                margin-left: 100px;
+            }
+            .btarea img{
+                margin-left: 40px;
+            
+            }
         }
     </style>
 </head>
@@ -369,7 +385,7 @@
                 <button type="button" class="btn btn-info" >現在就擁有>></button>
             </div>
         
-            <div class="col align-self-center"><img style="width: 280px;"
+            <div class="col align-self-center"><img style="max-width: 280px;"
                 src="https://raw.githubusercontent.com/ccwang116/Product_demo_ScrollAnimation/gh-pages/images/mainProduct.png"
                 alt="">
             </div>
