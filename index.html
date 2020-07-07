@@ -13,202 +13,357 @@
 
     <style>
         body {
-            height: 1000vh;
+            height: 900vh;
         }
 
         header {
             height: 100vh;
         }
-        .mountain{
+
+        .arrow {
+            position: fixed;
+            left: 0px;
+            bottom: 0;
+            width: 100vw;
+            height: 100vh;
+            transition: 1.5s;
+            opacity: 0;
+        }
+
+        .arrow.active {
+            opacity: 1;
+        }
+
+        .arrowimg {
+            width: 50px;
+            height: 10vh;
+            object-fit: contain;
+            transition: 1.5s;
+            margin-top: 60vh;
+        }
+
+        .mountain {
             width: 100%;
             height: 100%;
             object-fit: cover;
         }
-        .bkbox{
-            height: 200vh;
+
+        .bkbox {
+            height: 100vh;
             background: #000;
             position: relative;
         }
-        .wtbox{
+
+        .wtbox {
             position: absolute;
-            left:0;
-            top:0;
+            left: 0;
+            top: 0;
             width: 0;
             height: 0;
             background: #ccc;
             transition: 1.5s;
         }
-        .wtbox.active{
+
+        .wtbox.active {
             width: 100%;
             height: 30px;
         }
-        .wtbox.active.active2{
-            height: 100%;
+
+        .wtbox.active.active2 {
+            height: 130vh;
         }
-        
-        .secbox{
+
+        .secbox {
             position: fixed;
-            left:0px;
-            top:0px;
+            left: 0px;
+            top: 0px;
             width: 80vw;
             height: 100vh;
             transition: 1.5s;
             opacity: 0;
             margin: 0 auto;
         }
-        .secbox.active{
+
+        .secbox.active {
             opacity: 1;
         }
-        .secbox .col{
+
+        .secbox .col {
             left: 10vw;
             top: 15vh;
         }
-        .sm-mt{
+
+        .sm-mt {
             min-width: 90px;
             object-fit: cover;
         }
-        .thirdbox{
+
+        .thirdbox {
             position: fixed;
-            left:0;
-            top:0;
+            left: 0;
+            top: 0;
             height: 100vh;
             transition: 1.5s;
             opacity: 0;
         }
-        .thirdbox.active{
+
+        .thirdbox.active {
             opacity: 1;
         }
-        .fourbox{
+
+        .fourbox {
             position: fixed;
-            left:-500px;
-            top:0;
+            left: -500px;
+            top: 0;
             height: 100vh;
             transition: 1.5s;
             opacity: 0;
         }
-        .fourbox.active{
+
+        .fourbox.active {
             opacity: 1;
-            left:0px;
+            left: 0px;
         }
-        .pdimg{
+
+        .pdimg {
             width: 150px;
-            height: 60vh;         
-            object-fit: contain;   
+            height: 60vh;
+            object-fit: contain;
             transition: 1.5s;
             margin-top: 30vh;
 
         }
-        .fivebox{
+
+        .fivebox {
             position: fixed;
-            left:0px;
-            bottom:-100vh;
+            left: 0px;
+            bottom: -100vh;
             width: 100vw;
             height: 100vh;
             transition: 1.5s;
             opacity: 1;
         }
-        .bkimg{
+
+        .bkimg {
             width: 150px;
-            height: 60vh;        
-            object-fit: contain;   
+            height: 60vh;
+            object-fit: contain;
             transition: 1.5s;
             margin-top: 30vh;
+            /* transform-origin: 0 5px; */
+
         }
-        .fivebox.active{
-            bottom:0;
+
+        .bkimg.active {
+            transform: scale(20);
+            opacity: 0;
         }
-        .ffbox{
+
+        .fivebox.active {
+            bottom: 0;
+        }
+
+        .ffbox {
             position: fixed;
-            left:0px;
-            bottom:-100vh;
+            left: 0px;
+            bottom: -100vh;
             width: 100vw;
             height: 100vh;
             transition: 1.5s;
             opacity: 1;
             background: #000;
         }
-        .ffbox.active{
-            bottom:0;
+
+        .ffbox.active {
+            bottom: 0;
         }
-        .ffbox.active.active2{
-            bottom:100vh;
+
+        .ffbox.active.active2 {
+            bottom: 100vh;
         }
-        .sixbox{
+
+        .sixbox {
             position: fixed;
-            left:0px;
-            bottom:-100vh;
+            left: 0px;
+            bottom: -100vh;
             width: 100vw;
             height: 100vh;
             transition: 1.5s;
             opacity: 1;
 
         }
-        .sixbox.active{
-            bottom:0;
+
+        .sixbox.active {
+            bottom: 0;
         }
+
+        .sevbox {
+            position: fixed;
+            left: 0;
+            top: 0;
+            width: 0;
+            height: 0;
+            background: #fff9af;
+            transition: 1.5s;
+        }
+
+        .sevbox.active {
+            width: 100%;
+            height: 30px;
+        }
+
+        .sevbox.active.active2 {
+            height: 100%;
+        }
+
+        .adv1 {
+            position: fixed;
+            left: -100vw;
+            top: 10vh;
+            height: 27vh;
+            transition: 1.5s;
+        }
+
+        .adv2 {
+            position: fixed;
+            right: -100vw;
+            top: 37vh;
+            height: 27vh;
+            transition: 1.5s;
+        }
+
+        .adv3 {
+            position: fixed;
+            left: -100vw;
+            top: 64vh;
+            height: 27vh;
+            transition: 1.5s;
+        }
+
+        .adv1.active {
+            position: fixed;
+            left: 20vw;
+            top: 10vh;
+            height: 27vh;
+            transition: 1.5s;
+        }
+
+        .adv2.active {
+            position: fixed;
+            right: 20vw;
+            top: 37vh;
+            height: 27vh;
+            transition: 1.5s;
+        }
+
+        .adv3.active {
+            position: fixed;
+            left: 20vw;
+            top: 64vh;
+            height: 27vh;
+            transition: 1.5s;
+        }
+
+        .btarea {
+            position: fixed;
+            left: 0;
+            top: 0;
+            width: 100vw;
+            height: 100vh;
+            opacity: 0;
+            transition: 1.5s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+        }
+
+        .btarea.active {
+            opacity: 1;
+        }
+
         @media screen and (max-width:780px) {
-            .secbox .col{
-            left: 0vw;
-            top: 0vh;
-            padding: 10px;
-        }
-        .mountain{
-            /* width: 50w; */
+            .secbox .col {
+                left: 0vw;
+                top: 0vh;
+                padding: 10px;
+            }
+
+            /* .mountain{
             height: 50%;
-            object-fit: cover;
-        }
-        
+        } */
+
         }
     </style>
 </head>
 
 <body>
     <header>
-    <img class=" mountain" src="https://raw.githubusercontent.com/ccwang116/Product_demo_ScrollAnimation/gh-pages/images/titleimg.jpg" alt="">
+        <img class="mountain"
+            src="https://raw.githubusercontent.com/ccwang116/Product_demo_ScrollAnimation/gh-pages/images/titleimg.jpg"
+            alt="">
+        <div class="arrow active">
+            <img class="w-100 arrowimg" style="filter:drop-shadow(0px 0px 2px rgba(255,255,255,.8))"
+                src="https://interactive.zaobao.com/2020/korean-war-remains/assets/image/gif-bounce-arrow.gif" alt="">
+        </div>
     </header>
-    <div class="w-100 bkbox"> 
+    <div class="w-100 bkbox">
         <div class="wtbox">
         </div>
-        <div class="row row-cols-md-2  row-cols-1 secbox flex-wrap"> 
+        <div class="row row-cols-md-2  row-cols-1 secbox flex-wrap">
             <div class="col">
-                <img class="sm-mt" src="https://raw.githubusercontent.com/ccwang116/Product_demo_ScrollAnimation/gh-pages/images/sm-mt.jpg" alt="">
+                <img class="sm-mt"
+                    src="https://raw.githubusercontent.com/ccwang116/Product_demo_ScrollAnimation/gh-pages/images/sm-mt.jpg"
+                    alt="">
             </div>
             <div class="col">
                 <h2 class="mt-5 ml-5">雪山白<br>
                     經典大器優雅
-                    </h2>
-                    <p class="text-wrap ml-5" style="width: 150px;">乾淨、清爽、純潔的鮮明白色,
-                        四季百搭輕松駕馭各種穿搭風格,
-                        簡約卻不平凡。</p>
+                </h2>
+                <p class="text-wrap ml-5" style="width: 150px;">乾淨、清爽、純潔的鮮明白色,
+                    四季百搭輕松駕馭各種穿搭風格,
+                    簡約卻不平凡。</p>
             </div>
         </div>
-        <div class="thirdbox w-100">
-            <h3 class="w-100 position-absolute" style="left:50px;top: 10vh;">MiniPRO鹿善<br>
-                手持·美學<br>
-                美麗掌握在手裡</h3>
-                
-            <img class="w-100 mountain" src="https://cdn.pixabay.com/photo/2017/03/15/13/27/rough-horn-2146181_960_720.jpg" alt="">
-        </div>
-        <div class="fourbox">
-            <img class="w-100 pdimg" src="https://raw.githubusercontent.com/ccwang116/Product_demo_ScrollAnimation/gh-pages/images/mainProduct.png" alt="">
-        </div>
-        <div class="ffbox">
-            <h3 class="text-white mt-5"></h3>
-        </div>
-        <div class="fivebox">
-            <img class="w-100 bkimg" src="https://raw.githubusercontent.com/ccwang116/Product_demo_ScrollAnimation/gh-pages/images/bkProduct.png" alt="">
-        </div>
-        <div class="sixbox">
-            <h3 class="w-100 position-absolute" style="left:50px;top: 10vh;">黑色經典不凡<br>
-                美感實用,内外兼具 </h3>
-                <p class="m-0 w-100 position-absolute" style="left:50px;top: calc(10vh + 66px)">
-                MiniPRO鹿善的設計採用優質材料和先進工藝,<br>簡約流線型輕量化設計,<br>
-                與精緻機身巧妙融合,賦予絕美流暢外觀打造質感生活·</p>
-           
-        </div>
     </div>
-    
-   
+    <div class="thirdbox w-100">
+        <h3 class="w-100 position-absolute" style="left:50px;top: 10vh;">MiniPRO鹿善<br>
+            手持·美學<br>
+            美麗掌握在手裡</h3>
+
+        <img class="w-100 mountain" src="https://cdn.pixabay.com/photo/2017/03/15/13/27/rough-horn-2146181_960_720.jpg"
+            alt="">
+    </div>
+    <div class="fourbox">
+        <img class="w-100 pdimg"
+            src="https://raw.githubusercontent.com/ccwang116/Product_demo_ScrollAnimation/gh-pages/images/mainProduct.png"
+            alt="">
+    </div>
+    <div class="ffbox"></div>
+    <div class="fivebox">
+        <img class="w-100 bkimg"
+            src="https://raw.githubusercontent.com/ccwang116/Product_demo_ScrollAnimation/gh-pages/images/bkProduct.png"
+            alt="">
+    </div>
+    <div class="sixbox">
+        <h3 class="w-100 position-absolute" style="left:50px;top: 10vh;">黑色經典不凡<br>
+            美感實用,内外兼具 </h3>
+        <p class="m-0 w-100 position-absolute" style="left:50px;top: calc(10vh + 66px)">
+            MiniPRO鹿善的設計採用優質材料和先進工藝,<br>簡約流線型輕量化設計,<br>
+            與精緻機身巧妙融合,賦予絕美流暢外觀打造質感生活·</p>
+
+    </div>
+    <div class="sevbox">
+    </div>
+    <div class="adv1"> <img class="h-100" src="/images/adv1.png" alt=""> </div>
+    <div class="adv2"> <img class="h-100" src="/images/adv2.png" alt=""> </div>
+    <div class="adv3"> <img class="h-100" src="/images/adv3.png" alt=""> </div>
+    <div class="btarea">
+        <button type="button" class="btn btn-info" style="margin: 0 auto;">現在就擁有>></button>
+    </div>
+
+
+
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
@@ -229,40 +384,72 @@
             if (scrolhi > navPosition.top) { $(".bkbox").addClass("fixed-top") } else {
                 $(".bkbox").removeClass("fixed-top")
             }
-            if(scrolhi > space && scrolhi<= (2 * space)){
+            if (scrolhi > space && scrolhi <= (2 * space)) {
                 $(".wtbox").addClass("active")
-            }else if(scrolhi>2 * space && scrolhi <= 3 * space){
+            } else if (scrolhi > 2 * space && scrolhi <= 3 * space) {
                 $(".wtbox").addClass("active2")
                 $(".secbox").addClass("active")
-            }else if(scrolhi>900 && scrolhi<=1066){
+                $(".arrow").removeClass("active")
+            } else if (scrolhi > 3 * space && scrolhi <= 4 * space) {
                 $(".secbox").removeClass("active")
                 $(".thirdbox").addClass("active")
-            }else if(scrolhi>1066&& scrolhi<=1400){
+            } else if (scrolhi > 4 * space && scrolhi <= 5 * space) {
                 $(".fourbox").addClass("active")
                 $(".pdimg").addClass("active")
-            }else if(scrolhi>1400&& scrolhi<=1721){
                 $(".wtbox").removeClass("active active2")
+            } else if (scrolhi > 5 * space && scrolhi <= 6 * space) {
                 $(".thirdbox").removeClass("active")
                 $(".fourbox").removeClass("active")
-
                 $(".fivebox").addClass("active")
-            }else if(scrolhi>1721&& scrolhi<=2070){
+            } else if (scrolhi > 6 * space && scrolhi <= 7 * space) {
+
                 $(".ffbox").addClass("active")
-            }else if(scrolhi>2070&& scrolhi<=2370){
+            } else if (scrolhi > 7 * space && scrolhi <= 8 * space) {
+
                 $(".ffbox").addClass("active2")
                 $(".sixbox").addClass("active")
-            }else if(scrolhi>2370){
+            } else if (scrolhi > 8 * space && scrolhi <= 9 * space) {
                 $(".ffbox").addClass("active3")
-                //放大然後 三大優點
-                //該移除的要移除
-            }else{
+            } else if (scrolhi > 9 * space && scrolhi <= 10 * space) {
+                $(".sixbox").removeClass("active")
+                $(".fivebox").removeClass("active")
+
+                $(".bkimg").addClass("active")
+                $(".sevbox").addClass("active")
+            } else if (scrolhi > 10 * space && scrolhi <= 11 * space) {
+                $(".sevbox").addClass("active2")
+                $(".adv1").addClass("active")
+            } else if (scrolhi > 11 * space && scrolhi <= 12 * space) {
+                $(".adv2").addClass("active")
+
+            } else if (scrolhi > 12 * space && scrolhi <= 13 * space) {
+                $(".adv3").addClass("active")
+
+            } else if (scrolhi > 13 * space && scrolhi <= 14 * space) {
+                $(".sevbox").removeClass("active active2")
+                $(".adv1").removeClass("active")
+                $(".adv2").removeClass("active")
+                $(".adv3").removeClass("active")
+            } else if (scrolhi > 14 * space && scrolhi <= 15 * space) {
+                $(".btarea").addClass("active")
+            } else {
+                $(".arrow").removeClass("active")
+
                 $(".wtbox").removeClass("active active2")
                 $(".secbox").removeClass("active")
-
+                $(".thirdbox").removeClass("active")
+                $(".fourbox").removeClass("active")
+                $(".fivebox").removeClass("active")
+                $(".sixbox").removeClass("active")
+                $(".sevbox").removeClass("active active2")
+                $(".adv1").removeClass("active")
+                $(".adv2").removeClass("active")
+                $(".adv3").removeClass("active")
+                $(".btarea").removeClass("active")
             }
             console.log(scrolhi)
         })
-        
+
     </script>
 </body>
 
