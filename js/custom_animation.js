@@ -7,23 +7,29 @@ $(window).scroll(function () {
     //     $(".bkbox").removeClass("fixed-top")
     // }
     if (scrolhi > space && scrolhi <= (2 * space)) {
+        $(".arrow").removeClass("active")
         $(".wtbox").addClass("active")
-    } else if (scrolhi > 2 * space && scrolhi <= 3 * space) {
+    } else if (scrolhi > 2 * space && scrolhi <= 2.5 * space) {
         $(".wtbox").addClass("active2")
         $(".secbox").addClass("active")
-        $(".arrow").removeClass("active")
+    } else if (scrolhi > 2.5 * space && scrolhi <= 3 * space) {
+        
     } else if (scrolhi > 3 * space && scrolhi <= 4 * space) {
         $(".secbox").removeClass("active")
         $(".thirdbox").addClass("active")
     } else if (scrolhi > 4 * space && scrolhi <= 5 * space) {
         $(".fourbox").addClass("active")
         $(".pdimg").addClass("active")
+        $(".fivebox").removeClass("active")
         $(".wtbox").removeClass("active active2")
     } else if (scrolhi > 5 * space && scrolhi <= 6 * space) {
         $(".thirdbox").removeClass("active")
         $(".fourbox").removeClass("active")
         $(".fivebox").addClass("active")
+        $(".ffbox").removeClass("active active2 active3")
+
     } else if (scrolhi > 6 * space && scrolhi <= 7 * space) {
+        $(".sixbox").removeClass("active")
 
         $(".ffbox").addClass("active")
     } else if (scrolhi > 7 * space && scrolhi <= 8 * space) {
@@ -32,6 +38,12 @@ $(window).scroll(function () {
         $(".sixbox").addClass("active")
     } else if (scrolhi > 8 * space && scrolhi <= 9 * space) {
         $(".ffbox").addClass("active3")
+
+        $(".bkimg").removeClass("active")
+        $(".sevbox").removeClass("active active2")
+        $(".adv1").removeClass("active")
+        $(".adv2").removeClass("active")
+        $(".adv3").removeClass("active")
     } else if (scrolhi > 9 * space && scrolhi <= 10 * space) {
         $(".sixbox").removeClass("active")
         $(".fivebox").removeClass("active")
@@ -52,6 +64,8 @@ $(window).scroll(function () {
         $(".adv1").removeClass("active")
         $(".adv2").removeClass("active")
         $(".adv3").removeClass("active")
+        $(".btarea").removeClass("active")
+
     } else if (scrolhi > 14 * space && scrolhi <= 15 * space) {
         $(".btarea").addClass("active")
         $(".goPageArea").addClass("active")
