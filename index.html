@@ -44,16 +44,21 @@
         .wtbox.active.active2{
             height: 100%;
         }
+        
         .secbox{
             position: fixed;
-            left:80px;
-            top:80px;
+            left:0px;
+            top:0px;
             height: 100vh;
             transition: 1.5s;
             opacity: 0;
         }
         .secbox.active{
             opacity: 1;
+        }
+        .sm-mt{
+            min-width: 91px;
+            object-fit: cover;
         }
         .thirdbox{
             position: fixed;
@@ -79,10 +84,12 @@
             left:0px;
         }
         .pdimg{
-            width: 200px;
-            height: 300px;        
+            width: 150px;
+            height: 60vh;         
             object-fit: contain;   
             transition: 1.5s;
+            margin-top: 30vh;
+
         }
         .fivebox{
             position: fixed;
@@ -94,10 +101,11 @@
             opacity: 1;
         }
         .bkimg{
-            width: 200px;
-            height: 300px;        
+            width: 150px;
+            height: 60vh;        
             object-fit: contain;   
             transition: 1.5s;
+            margin-top: 30vh;
         }
         .fivebox.active{
             bottom:0;
@@ -141,43 +149,39 @@
     <div class="w-100 bkbox"> 
         <div class="wtbox">
         </div>
-        <div class="w-100 row row-cols-2 secbox"> 
+        <div class="w-100 row row-cols-md-2  row-cols-1 secbox flex-wrap"> 
             <div class="col">
-                <img src="https://raw.githubusercontent.com/ccwang116/Product_demo_ScrollAnimation/gh-pages/images/sm-mt.jpg" alt="">
+                <img class=" sm-mt" src="https://raw.githubusercontent.com/ccwang116/Product_demo_ScrollAnimation/gh-pages/images/sm-mt.jpg" alt="">
             </div>
             <div class="col">
-                <h2 class="mt-5">雪山白<br>
+                <h2 class="mt-5 ml-5">雪山白<br>
                     經典大器優雅
                     </h2>
-                    <p class="text-wrap" style="width: 150px;">乾淨、清爽、純潔的鮮明白色,
+                    <p class="text-wrap ml-5" style="width: 150px;">乾淨、清爽、純潔的鮮明白色,
                         四季百搭輕松駕馭各種穿搭風格,
                         簡約卻不平凡。</p>
             </div>
         </div>
         <div class="thirdbox w-100">
-            <h3 class="w-100 position-absolute left-0  text-center" style="top: 10vh;">MiniPRO鹿善<br>
+            <h3 class=" position-absolute left-0  text-center" style="top: 10vh;">MiniPRO鹿善<br>
                 手持·美學<br>
                 美麗掌握在手裡</h3>
                 
             <img class="w-100 mountain" src="https://cdn.pixabay.com/photo/2017/03/15/13/27/rough-horn-2146181_960_720.jpg" alt="">
         </div>
         <div class="fourbox">
-            <img class="w-100 h-100 pdimg" src="https://raw.githubusercontent.com/ccwang116/Product_demo_ScrollAnimation/gh-pages/images/mainProduct.png" alt="">
+            <img class="w-100 pdimg" src="https://raw.githubusercontent.com/ccwang116/Product_demo_ScrollAnimation/gh-pages/images/mainProduct.png" alt="">
         </div>
         <div class="ffbox">
-            
+            <h3 class="text-white mt-5">黑色經典不凡</h3>
         </div>
         <div class="fivebox">
-            <img class="w-100 h-100 bkimg" src="https://raw.githubusercontent.com/ccwang116/Product_demo_ScrollAnimation/gh-pages/images/mainProduct.png" alt="">
-            
-            
-
-
+            <img class="w-100 bkimg" src="https://raw.githubusercontent.com/ccwang116/Product_demo_ScrollAnimation/gh-pages/images/bkProduct.png" alt="">
         </div>
         <div class="sixbox">
             <h3 class="w-100 position-absolute" style="left:50px;top: 10vh;">MiniPRO鹿善<br>
                 美感實用,内外兼具 </h3>
-                <p class="w-100 position-absolute" style="left:50px;top: 25vh;">
+                <p class="m-0 w-100 position-absolute" style="left:50px;top: calc(10vh + 66px)">
                 MiniPRO鹿善的設計採用優質材料和先進工藝,<br>簡約流線型輕量化設計,<br>
                 與精緻機身巧妙融合,賦予絕美流暢外觀打造質感生活·</p>
            
@@ -212,21 +216,21 @@
             }else if(scrolhi>875&& scrolhi<=1066){
                 $(".secbox").removeClass("active")
                 $(".thirdbox").addClass("active")
-            }else if(scrolhi>1066&& scrolhi<=1300){
+            }else if(scrolhi>1066&& scrolhi<=1400){
                 $(".fourbox").addClass("active")
                 $(".pdimg").addClass("active")
-            }else if(scrolhi>1300&& scrolhi<=1521){
+            }else if(scrolhi>1400&& scrolhi<=1721){
+                $(".wtbox").removeClass("active active2")
                 $(".thirdbox").removeClass("active")
                 $(".fourbox").removeClass("active")
 
                 $(".fivebox").addClass("active")
-                $(".bkimg").attr("src","https://raw.githubusercontent.com/ccwang116/Product_demo_ScrollAnimation/gh-pages/images/bkProduct.png")
-            }else if(scrolhi>1521&& scrolhi<=1570){
+            }else if(scrolhi>1721&& scrolhi<=2070){
                 $(".ffbox").addClass("active")
-            }else if(scrolhi>1570&& scrolhi<=1770){
+            }else if(scrolhi>2070&& scrolhi<=2370){
                 $(".ffbox").addClass("active2")
                 $(".sixbox").addClass("active")
-            }else if(scrolhi>1770){
+            }else if(scrolhi>2370){
                 $(".ffbox").addClass("active3")
                 //放大然後 三大優點
                 //該移除的要移除
