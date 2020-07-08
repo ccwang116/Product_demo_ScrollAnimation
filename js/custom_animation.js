@@ -1,4 +1,4 @@
-let space = 300;
+let space = $(window).height();
 let navPosition = $(".bkbox").offset()
 // console.log(navPosition)
 $(window).scroll(function () {
@@ -8,9 +8,9 @@ $(window).scroll(function () {
     // }
     if (scrolhi > space && scrolhi <= (2 * space)) {
         $(".arrow").removeClass("active")
-        $(".wtbox").addClass("active")
+        $(".wtbox").addClass("active active2")
     } else if (scrolhi > 2 * space && scrolhi <= 2.5 * space) {
-        $(".wtbox").addClass("active2")
+        // $(".wtbox").addClass("active2")
         $(".secbox").addClass("active")
     } else if (scrolhi > 2.5 * space && scrolhi <= 3 * space) {
         
@@ -49,9 +49,9 @@ $(window).scroll(function () {
         $(".fivebox").removeClass("active")
 
         $(".bkimg").addClass("active")
-        $(".sevbox").addClass("active")
+        $(".sevbox").addClass("active active2")
     } else if (scrolhi > 10 * space && scrolhi <= 11 * space) {
-        $(".sevbox").addClass("active2")
+        // $(".sevbox").addClass("active2")
         $(".adv1").addClass("active")
     } else if (scrolhi > 11 * space && scrolhi <= 12 * space) {
         $(".adv2").addClass("active")
@@ -65,9 +65,10 @@ $(window).scroll(function () {
         $(".adv2").removeClass("active")
         $(".adv3").removeClass("active")
         $(".btarea").removeClass("active")
+        $(".btarea").addClass("active")
 
     } else if (scrolhi > 14 * space && scrolhi <= 15 * space) {
-        $(".btarea").addClass("active")
+        // $(".btarea").addClass("active")
         $(".goPageArea").addClass("active")
 
     } else {
