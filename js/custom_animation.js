@@ -6,21 +6,29 @@ $(window).scroll(function () {
     // if (scrolhi > navPosition.top) { $(".bkbox").addClass("fixed-top") } else {
     //     $(".bkbox").removeClass("fixed-top")
     // }
-    if (scrolhi > space && scrolhi <= (2 * space)) {
+    if (scrolhi > 0 && scrolhi <= space) {
+        $(".bkbox").removeClass("active")
+
+    } else if (scrolhi >space && scrolhi <= 2 * space) {
+
+        $(".bkbox").addClass("active")
         $(".arrow").removeClass("active")
         $(".wtbox").addClass("active active2")
-    } else if (scrolhi > 2 * space && scrolhi <= 2.5 * space) {
+    } else if (scrolhi > 2 * space && scrolhi <= 3 * space) {
         // $(".wtbox").addClass("active2")
         $(".secbox").addClass("active")
-    } else if (scrolhi > 2.5 * space && scrolhi <= 3 * space) {
+    
         
     } else if (scrolhi > 3 * space && scrolhi <= 4 * space) {
+        $(".bkbox").removeClass("active")
+
         $(".secbox").removeClass("active")
         $(".thirdbox").addClass("active")
     } else if (scrolhi > 4 * space && scrolhi <= 5 * space) {
         $(".fourbox").addClass("active")
         $(".pdimg").addClass("active")
         $(".fivebox").removeClass("active")
+        $(".removebox").removeClass("active")
         $(".wtbox").removeClass("active active2")
     } else if (scrolhi > 5 * space && scrolhi <= 6 * space) {
         $(".thirdbox").removeClass("active")

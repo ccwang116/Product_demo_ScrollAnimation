@@ -51,7 +51,13 @@
         .bkbox {
             height: 100vh;
             background: #000;
-            position: relative;
+            position: fixed;
+            left: 0;
+            top: 0;
+            opacity: 0;
+        }
+        .bkbox.active{
+            opacity: 1;
         }
 
         .wtbox {
