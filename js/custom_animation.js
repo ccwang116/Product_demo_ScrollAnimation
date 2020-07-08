@@ -8,16 +8,20 @@ $(window).scroll(function () {
     // }
     if (scrolhi > 0 && scrolhi <= space) {
         $(".bkbox").removeClass("active")
+        $(".wtbox").removeClass("active active2")
 
     } else if (scrolhi >space && scrolhi <= 2 * space) {
 
         $(".bkbox").addClass("active")
         $(".arrow").removeClass("active")
+        $(".secbox").removeClass("active")
+
         $(".wtbox").addClass("active active2")
     } else if (scrolhi > 2 * space && scrolhi <= 3 * space) {
         // $(".wtbox").addClass("active2")
         $(".secbox").addClass("active")
     
+        $(".thirdbox").removeClass("active")
         
     } else if (scrolhi > 3 * space && scrolhi <= 4 * space) {
         $(".bkbox").removeClass("active")
@@ -66,13 +70,13 @@ $(window).scroll(function () {
 
     } else if (scrolhi > 12 * space && scrolhi <= 13 * space) {
         $(".adv3").addClass("active")
+        $(".btarea").removeClass("active")
 
     } else if (scrolhi > 13 * space && scrolhi <= 14 * space) {
         $(".sevbox").removeClass("active active2")
         $(".adv1").removeClass("active")
         $(".adv2").removeClass("active")
         $(".adv3").removeClass("active")
-        $(".btarea").removeClass("active")
         $(".btarea").addClass("active")
 
     } else if (scrolhi > 14 * space && scrolhi <= 15 * space) {
