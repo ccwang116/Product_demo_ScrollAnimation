@@ -68,18 +68,18 @@ $(window).scroll(function () {
     } else if (scrolhi > 11 * space && scrolhi <= 12 * space) {
         $(".adv2").addClass("active")
 
-    } else if (scrolhi > 12 * space && scrolhi <= 13 * space) {
+    } else if (scrolhi > 12 * space && scrolhi <= 14 * space) {
         $(".adv3").addClass("active")
         $(".btarea").removeClass("active")
 
-    } else if (scrolhi > 13 * space && scrolhi <= 14 * space) {
+    } else if (scrolhi > 14 * space && scrolhi <= 15 * space) {
         $(".sevbox").removeClass("active active2")
         $(".adv1").removeClass("active")
         $(".adv2").removeClass("active")
         $(".adv3").removeClass("active")
         $(".btarea").addClass("active")
 
-    } else if (scrolhi > 14 * space && scrolhi <= 15 * space) {
+    } else if (scrolhi > 15 * space && scrolhi <= 16 * space) {
         // $(".btarea").addClass("active")
         $(".goPageArea").addClass("active")
 
